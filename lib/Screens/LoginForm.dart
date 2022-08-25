@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:login_with_signup/Comm/comHelper.dart';
 import 'package:login_with_signup/Comm/genLoginSignupHeader.dart';
@@ -78,12 +80,11 @@ class _LoginFormState extends State<LoginForm> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              // SizedBox(height: 10.0),
-
               Padding(
                 padding: const EdgeInsets.only(left: 28),
                 child: genLoginSignupHeader('Login'),
               ),
+
               SizedBox(height: 10.0),
 
               getTextFormField(
@@ -91,18 +92,19 @@ class _LoginFormState extends State<LoginForm> {
                   icon: Icons.person,
                   hintName: 'User ID'),
               SizedBox(height: 10.0),
+
               getTextFormField(
                 controller: _conPassword,
                 icon: Icons.lock,
                 hintName: 'Password',
                 isObscureText: true,
               ),
+
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 25,vertical: 40),
                 width: double.infinity,
                 child: FlatButton(
-                  child: Text(
-                    'Login',
+                  child: Text('Login',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: login,
@@ -112,11 +114,14 @@ class _LoginFormState extends State<LoginForm> {
                   borderRadius: BorderRadius.circular(30.0),
                 ),
               ),
+
               Container(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Does not have account ? '),
+
+                    Text('Does not have account ?'),
+
                     FlatButton(
                       textColor: Colors.blue,
                       child: Text('Signup'),

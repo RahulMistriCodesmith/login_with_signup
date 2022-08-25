@@ -1,8 +1,11 @@
+// ignore_for_file: camel_case_types, must_be_immutable
+
 import 'package:flutter/material.dart';
 
 import 'comHelper.dart';
 
 class getTextFormField extends StatelessWidget {
+
   TextEditingController controller;
   String hintName;
   IconData icon;
@@ -16,7 +19,9 @@ class getTextFormField extends StatelessWidget {
       this.icon,
       this.isObscureText = false,
       this.inputType = TextInputType.text,
-      this.isEnable = true});
+      this.isEnable = true
+      }
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +41,26 @@ class getTextFormField extends StatelessWidget {
           }
           return null;
         },
+
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(30.0)),
-            borderSide: BorderSide(color: Colors.transparent),
+            borderSide: BorderSide(color: Colors.blue),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(30.0)),
             borderSide: BorderSide(color: Colors.blue),
           ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            borderSide: BorderSide(color: Colors.red),
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            borderSide: BorderSide(color: Colors.blue),
+          ),
+
+
           prefixIcon: Icon(icon),
           hintText: hintName,
           labelText: hintName,

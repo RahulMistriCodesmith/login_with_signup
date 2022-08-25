@@ -1,4 +1,7 @@
+// ignore_for_file: non_constant_identifier_names
+
 class UserModel {
+
   String user_id;
   String user_name;
   String email;
@@ -22,4 +25,5 @@ class UserModel {
     email = map['email'];
     password = map['password'];
   }
+
 }

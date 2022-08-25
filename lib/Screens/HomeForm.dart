@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:login_with_signup/Comm/comHelper.dart';
 import 'package:login_with_signup/Comm/genTextFormField.dart';
@@ -127,26 +129,34 @@ class _HomeFormState extends State<HomeForm> {
                       isEnable: false,
                       icon: Icons.person,
                       hintName: 'User ID'),
+
                   SizedBox(height: 10.0),
+
                   getTextFormField(
                       controller: _conUserName,
                       icon: Icons.person_outline,
                       inputType: TextInputType.name,
                       hintName: 'User Name'),
+
                   SizedBox(height: 10.0),
+
                   getTextFormField(
                       controller: _conEmail,
                       icon: Icons.email,
                       inputType: TextInputType.emailAddress,
                       hintName: 'Email'),
+
                   SizedBox(height: 10.0),
+
                   getTextFormField(
                     controller: _conPassword,
                     icon: Icons.lock,
                     hintName: 'Password',
                     isObscureText: true,
                   ),
+
                   SizedBox(height: 10.0),
+
                   Container(
                     margin: EdgeInsets.all(30.0),
                     width: double.infinity,
@@ -170,8 +180,9 @@ class _HomeFormState extends State<HomeForm> {
                       isEnable: false,
                       icon: Icons.person,
                       hintName: 'User ID'),
+
                   SizedBox(height: 10.0),
-                  SizedBox(height: 10.0),
+
                   Container(
                     margin: EdgeInsets.all(30.0),
                     width: double.infinity,

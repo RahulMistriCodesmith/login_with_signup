@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:login_with_signup/Comm/comHelper.dart';
 import 'package:login_with_signup/Comm/genLoginSignupHeader.dart';
@@ -71,40 +73,51 @@ class _SignupFormState extends State<SignupForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   Padding(
                     padding: const EdgeInsets.only(left: 28,top: 70),
                     child: genLoginSignupHeader('Signup'),
                   ),
+
                   getTextFormField(
                       controller: _conUserId,
                       icon: Icons.person,
                       hintName: 'User ID'),
+
                   SizedBox(height: 10.0),
+
                   getTextFormField(
                       controller: _conUserName,
                       icon: Icons.person_outline,
                       inputType: TextInputType.name,
                       hintName: 'User Name'),
+
                   SizedBox(height: 10.0),
+
                   getTextFormField(
                       controller: _conEmail,
                       icon: Icons.email,
                       inputType: TextInputType.emailAddress,
                       hintName: 'Email'),
+
                   SizedBox(height: 10.0),
+
                   getTextFormField(
                     controller: _conPassword,
                     icon: Icons.lock,
                     hintName: 'Password',
                     isObscureText: true,
                   ),
+
                   SizedBox(height: 10.0),
+
                   getTextFormField(
                     controller: _conCPassword,
                     icon: Icons.lock,
                     hintName: 'Confirm Password',
                     isObscureText: true,
                   ),
+
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 28,vertical: 40),
                     width: double.infinity,
@@ -120,6 +133,7 @@ class _SignupFormState extends State<SignupForm> {
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                   ),
+
                   Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

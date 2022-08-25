@@ -1,10 +1,19 @@
+// ignore_for_file: camel_case_types, must_be_immutable, duplicate_ignore
+
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 
-class genLoginSignupHeader extends StatelessWidget {
+class genLoginSignupHeader extends StatefulWidget {
   String headerName;
 
   genLoginSignupHeader(this.headerName);
 
+  @override
+  State<genLoginSignupHeader> createState() => _genLoginSignupHeaderState();
+}
+
+class _genLoginSignupHeaderState extends State<genLoginSignupHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +21,7 @@ class genLoginSignupHeader extends StatelessWidget {
         children: [
           SizedBox(height: 50.0),
           Text(
-            headerName,
+            widget.headerName,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
