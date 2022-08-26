@@ -140,7 +140,11 @@ class _SignupFormState extends State<SignupForm> {
                       children: [
                         Text('Does you have account ?'),
                         FlatButton(
+                          minWidth: 0,
                           textColor: Colors.blue,
+                          shape: RoundedRectangleBorder(),
+                          padding: EdgeInsets.only(left: 5),
+
                           child: Text('Sign In'),
                           onPressed: () {
                             Navigator.pushAndRemoveUntil(

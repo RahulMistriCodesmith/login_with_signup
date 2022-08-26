@@ -161,8 +161,7 @@ class _HomeFormState extends State<HomeForm> {
                     margin: EdgeInsets.all(30.0),
                     width: double.infinity,
                     child: FlatButton(
-                      child: Text(
-                        'Update',
+                      child: Text('Update',
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: update,

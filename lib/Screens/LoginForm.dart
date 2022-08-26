@@ -123,6 +123,12 @@ class _LoginFormState extends State<LoginForm> {
                     Text('Does not have account ?'),
 
                     FlatButton(
+                     minWidth: 0,
+                      padding: EdgeInsets.only(left: 5),
+                      shape: RoundedRectangleBorder(
+                        // borderRadius: BorderRadius.circular(10),
+                        // side: BorderSide(color: Colors.brown)
+                      ),
                       textColor: Colors.blue,
                       child: Text('Signup'),
                       onPressed: () {
