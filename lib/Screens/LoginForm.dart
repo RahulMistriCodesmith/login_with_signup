@@ -7,6 +7,7 @@ import 'package:login_with_signup/Comm/genTextFormField.dart';
 import 'package:login_with_signup/DatabaseHandler/DbHelper.dart';
 import 'package:login_with_signup/Model/UserModel.dart';
 import 'package:login_with_signup/Screens/SignupForm.dart';
+import 'package:metaballs/metaballs.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'HomeForm.dart';
@@ -73,7 +74,24 @@ class _LoginFormState extends State<LoginForm> {
       //   centerTitle: true,
       //   title: Text('Login'),
       // ),
-      body: Container(
+      body: Metaballs(
+        color: Colors.black,
+        gradient: LinearGradient(
+            colors: [
+              Colors.blueAccent,
+              Colors.blueGrey,
+            ],
+            begin: Alignment.bottomRight,
+            end: Alignment.topLeft
+        ),
+        metaballs: 40,
+        animationDuration: const Duration(milliseconds: 200),
+        speedMultiplier: 1,
+        bounceStiffness: 5,
+        minBallRadius: 20,
+        maxBallRadius: 40,
+        glowRadius: 0.7,
+        glowIntensity: 0.6,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +141,7 @@ class _LoginFormState extends State<LoginForm> {
                     Text('Does not have account ?'),
 
                     FlatButton(
-                     minWidth: 0,
+                      minWidth: 0,
                       padding: EdgeInsets.only(left: 5),
                       shape: RoundedRectangleBorder(
                         // borderRadius: BorderRadius.circular(10),
@@ -141,8 +159,8 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ],
           ),
-        ),
-      ),
+        )
+      )
     );
   }
 }

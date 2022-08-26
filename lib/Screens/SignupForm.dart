@@ -7,6 +7,7 @@ import 'package:login_with_signup/Comm/genTextFormField.dart';
 import 'package:login_with_signup/DatabaseHandler/DbHelper.dart';
 import 'package:login_with_signup/Model/UserModel.dart';
 import 'package:login_with_signup/Screens/LoginForm.dart';
+import 'package:metaballs/metaballs.dart';
 
 class SignupForm extends StatefulWidget {
   @override
@@ -63,105 +64,124 @@ class _SignupFormState extends State<SignupForm> {
       //   centerTitle: true,
       //   title: Text('Signup'),
       // ),
-      body: Form(
-        key: _formKey,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Container(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+      body: Metaballs(
+        color: Colors.black,
+        gradient: LinearGradient(
+            colors: [
+              Colors.blueAccent,
+              Colors.blueGrey,
+            ],
+            begin: Alignment.bottomRight,
+            end: Alignment.topLeft
+        ),
+        metaballs: 40,
+        animationDuration: const Duration(milliseconds: 200),
+        speedMultiplier: 1,
+        bounceStiffness: 5,
+        minBallRadius: 20,
+        maxBallRadius: 40,
+        glowRadius: 0.7,
+        glowIntensity: 0.6,
+        child: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Container(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
 
-                  Padding(
-                    padding: const EdgeInsets.only(left: 28,top: 70),
-                    child: genLoginSignupHeader('Signup'),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 28,top: 70),
+                      child: genLoginSignupHeader('Signup'),
+                    ),
 
-                  getTextFormField(
-                      controller: _conUserId,
-                      icon: Icons.person,
-                      hintName: 'User ID'),
+                    getTextFormField(
+                        controller: _conUserId,
+                        icon: Icons.person,
+                        hintName: 'User ID'),
 
-                  SizedBox(height: 10.0),
+                    SizedBox(height: 10.0),
 
-                  getTextFormField(
-                      controller: _conUserName,
-                      icon: Icons.person_outline,
-                      inputType: TextInputType.name,
-                      hintName: 'User Name'),
+                    getTextFormField(
+                        controller: _conUserName,
+                        icon: Icons.person_outline,
+                        inputType: TextInputType.name,
+                        hintName: 'User Name'),
 
-                  SizedBox(height: 10.0),
+                    SizedBox(height: 10.0),
 
-                  getTextFormField(
-                      controller: _conEmail,
-                      icon: Icons.email,
-                      inputType: TextInputType.emailAddress,
-                      hintName: 'Email'),
+                    getTextFormField(
+                        controller: _conEmail,
+                        icon: Icons.email,
+                        inputType: TextInputType.emailAddress,
+                        hintName: 'Email'),
 
-                  SizedBox(height: 10.0),
+                    SizedBox(height: 10.0),
 
-                  getTextFormField(
-                    controller: _conPassword,
-                    icon: Icons.lock,
-                    hintName: 'Password',
-                    isObscureText: true,
-                  ),
+                    getTextFormField(
+                      controller: _conPassword,
+                      icon: Icons.lock,
+                      hintName: 'Password',
+                      isObscureText: true,
+                    ),
 
-                  SizedBox(height: 10.0),
+                    SizedBox(height: 10.0),
 
-                  getTextFormField(
-                    controller: _conCPassword,
-                    icon: Icons.lock,
-                    hintName: 'Confirm Password',
-                    isObscureText: true,
-                  ),
+                    getTextFormField(
+                      controller: _conCPassword,
+                      icon: Icons.lock,
+                      hintName: 'Confirm Password',
+                      isObscureText: true,
+                    ),
 
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 28,vertical: 40),
-                    width: double.infinity,
-                    child: FlatButton(
-                      child: Text(
-                        'Signup',
-                        style: TextStyle(color: Colors.white),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 28,vertical: 40),
+                      width: double.infinity,
+                      child: FlatButton(
+                        child: Text(
+                          'Signup',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: signUp,
                       ),
-                      onPressed: signUp,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
                     ),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
 
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Does you have account ?'),
-                        FlatButton(
-                          minWidth: 0,
-                          textColor: Colors.blue,
-                          shape: RoundedRectangleBorder(),
-                          padding: EdgeInsets.only(left: 5),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Does you have account ?'),
+                          FlatButton(
+                            minWidth: 0,
+                            textColor: Colors.blue,
+                            shape: RoundedRectangleBorder(),
+                            padding: EdgeInsets.only(left: 5),
 
-                          child: Text('Sign In'),
-                          onPressed: () {
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(builder: (_) => LoginForm()),
-                                (Route<dynamic> route) => false);
-                          },
-                        )
-                      ],
+                            child: Text('Sign In'),
+                            onPressed: () {
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(builder: (_) => LoginForm()),
+                                      (Route<dynamic> route) => false);
+                            },
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ),
+      )
     );
   }
 }
